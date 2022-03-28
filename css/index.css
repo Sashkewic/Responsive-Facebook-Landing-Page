@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --blue: #3b5998;
+  --lightblue: #2d88ff;
+  --white: #fff;
+  --black: #333;
+}
+
+/* Основная часть страницы */
+.main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(
+    120deg,
+    #fff,
+    #fff 65%,
+    var(--blue) 65%,
+    var(--blue) 100%
+  );
+  padding: 0px 100px;
+}
+
+/* Шапка */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Ссылка-логотип в шапке */
+header .logoLink img {
+  max-width: 50px;
+  margin-right: 20px;
+}
+
+/* Список в шапке */
+header ul {
+  display: flex;
+  list-style: none;
+}
+
+/* Элемент списка в шапке */
+header ul li {
+  margin: 0px 10px;
+}
+
+/* Ссылки в шапке */
+header ul li a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 500;
+}
+
+/* При наведении на ссылку в шапке */
+header ul li a:hover,
+header ul li a.active {
+  color: var(--lightblue);
+}
+
+/* Ссылка-кнопка 'Скачать' */
+.app {
+  position: absolute;
+  right: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  color: var(--blue);
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* При наведении на ссылку-кнопку */
+.app:hover {
+  background: var(--lightblue);
+  color: var(--white);
+  transition: 0.3s;
+}
+
+/* Иконка у ссылки-кнопки */
+.app ion-icon {
+  margin-right: 10px;
+  font-size: 22px;
+}
+
+/* Контентная часть */
+.contentBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Текстовая часть контента */
+.contentBox .text {
+  max-width: 800px;
+}
+
+/* Facebook-заголовок */
+.contentBox .text h2 {
+  font-size: 96px;
+  color: var(--blue);
+}
+
+/* Параграф */
+.contentBox .text p {
+  font-size: 18px;
+  color: var(--black);
+  line-height: 28px;
+}
+
+/* Download-заголовок */
+.contentBox .text h4 {
+  margin: 20px 0;
+}
+
+/* Кнопка-ссылка на магазин приложений */
+.btn {
+  background: var(--blue);
+  color: var(--white);
+  display: inline-flex;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  margin: 5px 20px 5px 0;
+  border-radius: 5px;
+}
+
+/* При наведении на кнопку-ссылку */
+.btn:hover {
+  background: var(--lightblue);
+}
+
+/* Иконка */
+.btn ion-icon {
+  margin-right: 10px;
+  font-size: 22px;
+}
+
+/* Изображение смартфона */
+.imgBox img {
+  margin-left: 50px;
+  margin-right: 100px;
+  max-width: 300px;
+  display: none;
+}
+
+/* Активное изображение смартфона */
+.imgBox img.active {
+  display: block;
+}
+
+/* Блок с навигацией по слайдам */
+.dots {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Навигация по слайдам */
+.dots .dot {
+  position: relative;
+  width: 10px;
+  height: 30px;
+  background: var(--white);
+  display: inline-flex;
+  margin: 5px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Активный фрагмент навигации */
+.dots .dot.active {
+  background: var(--white);
+}
+
+/* Блок с ссылками на соцсети */
+.sci {
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+}
+/* Элементы списка ссылок */
+.sci li {
+  list-style: none;
+  margin-right: 20px;
+}
+
+/* Ссылки */
+.sci li a {
+  font-size: 28px;
+  color: var(--blue);
+}
+
+/* Наведение на ссылку */
+.sci li a:hover {
+  color: var(--lightblue);
+}
+
+/* Адаптивная часть */
+@media screen and (max-width: 1024px) {
+  header {
+    padding: 30px;
+    justify-content: space-between;
+  }
+
+  .main {
+    padding: 30px;
+    background: #fff;
+  }
+
+  .app {
+    display: none;
+  }
+
+  .contentBox {
+    flex-direction: column-reverse;
+    margin: 100px 0;
+  }
+
+  .contentBox .text {
+    text-align: center;
+  }
+
+  .contentBox .text h2 {
+    font-size: 48px;
+  }
+
+  .imgBox img {
+    margin: 0;
+  }
+
+  .dots {
+    position: relative;
+    top: initial;
+    transform: none;
+    right: initial;
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+  }
+
+  .dots .dot {
+    background: rgba(63, 81, 181, 0.2);
+    width: 25px;
+    height: 10px;
+  }
+
+  .dots .dot.active {
+    background: rgb(63, 81, 181);
+  }
+
+  .sci {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
